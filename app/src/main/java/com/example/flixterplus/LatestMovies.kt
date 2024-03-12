@@ -12,6 +12,10 @@ class LatestMovies {
     @SerializedName("backdrop_path")  //retrieve the backdrop path to display in the Image view
     var movieBackdropPath : String? = null //set the variable datatype to string and set the value to null
 
+    //define the movie overview
+    @SerializedName("overview")
+    var movieOverview : String? = null  //extract the movie overview, initialize to null
+
     @SerializedName("poster_path")  //retrieve the poster path, experiment and see which one is the actual image path
     var moviePosterPath : String? = null
 

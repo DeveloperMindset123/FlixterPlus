@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+        android:id="@+id/RecyclerViewList"
         android:name="com.codepath.bestsellerlistapp.BestSellerBooksFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +14,7 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".BestSellerBooksFragment"
-        tools:listitem="@layout/fragment_best_seller_book" />
+        tools:listitem="@layout/fragment_latest_movie" />
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress"
