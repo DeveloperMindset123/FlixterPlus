@@ -2,11 +2,27 @@ package com.example.flixterplus
 
 import com.google.gson.annotations.SerializedName
 
-
+//Note: Base path is the following: "https://image.tmdb.org/t/p/w500/" --> add this path prior to the backdrop/poster path to display the image
 //This is the movie data model file, refer to the json file for the sample response
 class LatestMovies {
-    @SerializedName("")
+    //ensure that the strings within @SerializedName matches the JSON response, which I have included at the bottom as reference
+    @SerializedName("id")  //retrieve the movie id from the json response
+    var id = 0  //initialize the id to hold the value 0
 
+    @SerializedName("backdrop_path")  //retrieve the backdrop path to display in the Image view
+    var movieBackdropPath : String? = null //set the variable datatype to string and set the value to null
+
+    @SerializedName("poster_path")  //retrieve the poster path, experiment and see which one is the actual image path
+    var moviePosterPath : String? = null
+
+    @SerializedName("title")  //retrieve the official movie title
+    var movieTitle : String? = null
+
+    @SerializedName("original_title")  //retreive the original title of the movie
+    var movieOriginalTitle : String? = null
+
+    @SerializedName("vote_average")  //extract the movie rating
+    var movieRating : String? = null
 }
 
 /**
