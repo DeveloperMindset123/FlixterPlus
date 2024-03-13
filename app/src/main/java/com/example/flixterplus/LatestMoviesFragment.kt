@@ -86,7 +86,7 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
                 Log.i("Json Response:", json.jsonObject.toString())  //log the result json response in string format
 
                 //note, the following two lines of code may require adjustment depending on the result
-                // Assuming 'results' is an array in your JSON structure (refer to MovieData.json file to see how a sample api response looks like
+                // Assuming 'results' is an array in your JSON structure (refer to MovieData.json file to see how a sample api response looks like --> results is a json array, not a json object, attempting to retrieve it as a jsonObject will cause an type mismatch
                 val resultsJsonArray: JSONArray = json.jsonObject.getJSONArray("results")
 
                 val moviesRawJson : String = resultsJsonArray.toString()  //convert jsonArray to string

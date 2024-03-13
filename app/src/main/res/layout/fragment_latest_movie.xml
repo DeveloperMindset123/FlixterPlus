@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="6dp">
     <!--copy the textView for rankings-->
-
+<!--  is this neccessary?
     <TextView
         android:id="@+id/MovieId"
         android:layout_width="wrap_content"
@@ -17,29 +17,36 @@
         android:textSize="22sp"
         android:fontFamily="serif"
         />
-
+-->
     <!--Copy the ImageView for Book Image-->
+    <!--Author and title already exists in the starter code-->
+
     <ImageView
         android:id="@+id/Movie_image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintTop_toTopOf="@+id/MovieId"
-        app:layout_constraintStart_toEndOf="@+id/MovieId"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
+
         android:contentDescription="Book Cover Image"
-        />
-    <!--Author and title already exists in the starter code-->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
     <TextView
         android:id="@+id/Movie_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="190dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="25dp"
+        android:text="movie title"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/Movie_image"
-        app:layout_constraintStart_toStartOf="parent"
         android:textStyle="bold"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Movie_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
     <TextView
         android:id="@+id/Movie_Director"
         android:layout_width="wrap_content"
@@ -50,27 +57,33 @@
         />
 
     <!--Copy the textView for description-->
+
+    <!--Copy the buy button compoent-->
     <TextView
         android:id="@+id/Movie_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/Movie_Director"
-        app:layout_constraintStart_toStartOf="parent"
-        android:maxLines="4"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
         android:ellipsize="end"
         android:fontFamily="sans-serif-light"
-        />
-
-    <!--Copy the buy button compoent-->
-    <Button
-        android:id="@+id/buy_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BUY ON AMAZON"
-        app:layout_constraintTop_toBottomOf="@+id/Movie_description"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#567b95"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        />
+        android:maxLines="4"
+        android:text="Random Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Movie_image"
+        app:layout_constraintTop_toBottomOf="@+id/Movie_title" />
+    <!--
+        <Button
+            android:id="@+id/buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUY ON AMAZON"
+            app:layout_constraintTop_toBottomOf="@+id/Movie_description"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="#567b95"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            />
+            -->
 </androidx.constraintlayout.widget.ConstraintLayout>

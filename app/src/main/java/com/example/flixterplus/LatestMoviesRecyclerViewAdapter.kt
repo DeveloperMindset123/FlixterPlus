@@ -44,10 +44,10 @@ class LatestMoviesRecyclerViewAdapter(
         var mItem : LatestMovies? = null  //set to null if the movie doesn't exist
         val mMovieTitle : TextView = mView.findViewById<View>(id.Movie_title) as TextView
         //val mMovieDirector : TextView = mView.findViewById<View>(id.Movie_Director) as TextView
-        val mBookId : TextView = mView.findViewById<View>(id.MovieId) as TextView
+        //val mBookId : TextView = mView.findViewById<View>(id.MovieId) as TextView
         val mMovieDescription : TextView = mView.findViewById<View>(id.Movie_description) as TextView
         val mMovieImage : ImageView = mView.findViewById<View>(id.Movie_image) as ImageView
-        val mMovieId : TextView = mView.findViewById<View>(id.MovieId) as TextView  //extract the movie id from the data model
+        //val mMovieId : TextView = mView.findViewById<View>(id.MovieId) as TextView  //extract the movie id from the data model
 
 
         //val mMovieButton : Button = mView.findViewById<View>(R.id.movie_button) as Button  ==> did not define this view, will lead to error if I were to uncomment this right now
@@ -72,7 +72,7 @@ class LatestMoviesRecyclerViewAdapter(
         holder.mMovieTitle.text = movie.movieTitle
         //holder.mMovieDirector.text = movie.ovmieDirector --> didn't define this in the data model
         holder.mMovieDescription.text = movie.movieOverview
-        holder.mMovieId.text = movie.id.toString()  //convert the integer value to string, otherwise, we cannot use the TextView setter
+        //holder.mMovieId.text = movie.id.toString()  //convert the integer value to string, otherwise, we cannot use the TextView setter --> this displays the movieID
 
             /**  --> the json response doesn't return any url
         holder.mMovieButton.setOnClickListener {

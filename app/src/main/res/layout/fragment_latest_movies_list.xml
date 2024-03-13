@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--tool:listitem="@layout/<xml-file-for-individual-row-design>-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewList"
         android:name="com.codepath.bestsellerlistapp.BestSellerBooksFragment"
