@@ -17,13 +17,6 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            android:transformPivotX="10dp"
-            android:text="TextView" />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
