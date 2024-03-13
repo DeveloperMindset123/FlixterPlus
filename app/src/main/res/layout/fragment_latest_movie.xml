@@ -25,7 +25,6 @@
         android:id="@+id/Movie_image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-
         android:contentDescription="Book Cover Image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,14 +57,15 @@
 
     <!--Copy the textView for description-->
 
-    <!--Copy the buy button compoent-->
+    <!--Copy the buy button compoent, note that adding android:ellipsize="end" ensures that large text display shows ... instead to save screen space-->
     <TextView
         android:id="@+id/Movie_description"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_width="230dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:ellipsize="end"
+        android:layout_marginRight="10dp"
         android:fontFamily="sans-serif-light"
         android:maxLines="4"
         android:text="Random Description"
