@@ -18,6 +18,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.Headers
+import org.json.JSONArray
 import org.json.JSONObject
 
 
@@ -39,7 +40,7 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
         val context = view.context
 
         //note that since the extension named layoutManager hasn't been created in the adapter file, it will cause an error
-        recyclerView.layoutManager = GridLayoutManager(context, 2)
+        recyclerView.layoutManager = GridLayoutManager(context, 1)  //set to 1 since we want each movie to be displayed in one row
         updateAdapter(progressBar, recyclerView)
         return view
     }
@@ -82,22 +83,23 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
                 //print out the api onSuccess response using log.i
                 Log.i("Status code", statusCode.toString())  //convert the status code into a string and print it out
                 Log.i("Headers", headers.toString())  //print out information pertaining to the header
-                Log.i("Json Response:", json.jsonObject.toString())  //extract the json object and convert it to a string and print it out on the logcat section
+                Log.i("Json Response:", json.jsonObject.toString())  //log the result json response in string format
 
                 //note, the following two lines of code may require adjustment depending on the result
-                val resultsJson : JSONObject = json.jsonObject.get("results") as JSONObject  //thankfully the movie api also returns a section known as result (refer to MovieData.json file within sampledata directory)
+                // Assuming 'results' is an array in your JSON structure (refer to MovieData.json file to see how a sample api response looks like
+                val resultsJsonArray: JSONArray = json.jsonObject.getJSONArray("results")
 
-                val MoviesRawJson : String = resultsJson.get("title").toString()  //retrieve the title of the movie (note: may require adjustment, refer to online sources)
-
-                //JSON doesn't only contain objects - the response can also be an array or nested objects. Hence for the particular response call, json.jsonObject.get was selected
+                val moviesRawJson : String = resultsJsonArray.toString()  //convert jsonArray to string
 
                 //parse JSON into models
                 val gson = Gson()
                 val arrayMovieType = object : TypeToken<List<LatestMovies>>() {}.type  //retrieve the type the array consists of (which is of LatestMovies type contained within a list)
 
                 //create the model we will feed into recycler view adapter
-                val models : List<LatestMovies> = gson.fromJson(MoviesRawJson, arrayMovieType)
-                recyclerView.adapter(models, this@LatestMoviesFragment)
+                val models : List<LatestMovies> = gson.fromJson(moviesRawJson, arrayMovieType)
+
+                //modified to set adapter to the customer adapter class that was defined (refer to LatestMoviesRecyclerViewAdapter)
+                recyclerView.adapter = LatestMoviesRecyclerViewAdapter(models, this@LatestMoviesFragment)
                 //refer to the logcat for changes
                 Log.d("LatestMoviesFragment", "Response Successful")
             }
@@ -110,7 +112,6 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
                 errorResponse: String,
                 throwable: Throwable?
             ) {
-                TODO("Not yet implemented")
                 //wait for the response is now over
                 progressBar.hide()
 
@@ -124,8 +125,6 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
 
     }
     override fun onItemClick(item: LatestMovies) {  //default generated when extensions Fragment() and OnListFragmentInteractionListener is added (since we defined onItemClick function within interface onListFragmentInteractionListener
-        TODO("Not yet implemented")
-
         //display the title of the movie
         Toast.makeText(context, "Movie Title: " + item.movieTitle, Toast.LENGTH_SHORT).show()
 
@@ -134,6 +133,8 @@ class LatestMoviesFragment : Fragment(), OnListFragmentInteractionListener {
 
 }
 
+/*
 private fun RecyclerView.adapter(models: List<LatestMovies>, latestMoviesFragment: LatestMoviesFragment) {
 
 }
+*/
