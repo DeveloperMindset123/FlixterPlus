@@ -9,11 +9,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewList"
         android:name="com.codepath.bestsellerlistapp.BestSellerBooksFragment"
-        android:layout_width="match_parent"
+        android:layout_width="700dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="80dp"
+        android:layout_marginRight="10dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".BestSellerBooksFragment"
         tools:listitem="@layout/fragment_latest_movie" />

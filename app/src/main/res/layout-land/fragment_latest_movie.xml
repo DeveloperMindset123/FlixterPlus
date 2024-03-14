@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+    <!--copy the textView for rankings-->
+<!--  is this neccessary?
+    <TextView
+        android:id="@+id/MovieId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="22sp"
+        android:fontFamily="serif"
+        />
+-->
+    <!--Copy the ImageView for Book Image-->
+    <!--Author and title already exists in the starter code-->
+
+    <ImageView
+        android:id="@+id/Movie_image"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:contentDescription="Book Cover Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/Movie_title"
+        android:layout_width="490dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="25dp"
+        android:text="movie title"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Movie_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/Movie_Director"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintTop_toBottomOf="@+id/Movie_title"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!--Copy the textView for description-->
+
+    <!--Copy the buy button compoent, note that adding android:ellipsize="end" ensures that large text display shows ... instead to save screen space-->
+    <TextView
+        android:id="@+id/Movie_description"
+        android:layout_width="700dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:layout_marginRight="10dp"
+        android:fontFamily="sans-serif-light"
+        android:maxLines="4"
+        android:text="Random Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Movie_image"
+        app:layout_constraintTop_toBottomOf="@+id/Movie_title" />
+    <!--
+        <Button
+            android:id="@+id/buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUY ON AMAZON"
+            app:layout_constraintTop_toBottomOf="@+id/Movie_description"
+            app:layout_constraintStart_toStartOf="parent"
+            android:backgroundTint="#567b95"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            />
+            -->
+</androidx.constraintlayout.widget.ConstraintLayout>
