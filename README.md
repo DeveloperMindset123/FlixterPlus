@@ -42,7 +42,7 @@ GIF created with ...
 
 ## Notes
 
-Figuring out the resposibity aspect, turns out android studio already provides a method for landscape qualifier, fairly straightforward and simple project, has more potential, but a good way to learn the basic fundamentals of API. The error related to JSON obejct vs JSON array was about the only confusing part during the development phase of this project
+Figuring out the responsivity aspect, turns out android studio already provides a method for landscape qualifier, fairly straightforward and simple project, has more potential, but a good way to learn the basic fundamentals of API. The error related to JSON obejct vs JSON array was about the only confusing part during the development phase of this project
 
 ## License
 
